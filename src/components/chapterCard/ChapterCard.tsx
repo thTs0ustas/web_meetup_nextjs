@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { upperFirst } from 'lodash-es';
 import Link from 'next/link';
 
+import { clearPath } from '@/utils';
+
 type Props = {
   chapter: string;
   parts: string[];
@@ -23,10 +25,10 @@ const ChapterCard = ({ chapter, parts }: Props) => {
           {parts.map((part, i) => (
             <li key={part}>
               <Link
-                href={`/chapters/${chapter.toLocaleLowerCase()}/${part}`}
+                href={`/chapters/${chapter.toLocaleLowerCase()}/${clearPath(part)}`}
                 className="text-slate-200 hover:text-slate-100"
               >
-                {i + 1}. {upperFirst(part)}
+                {i + 1}. {upperFirst(clearPath(part))}
               </Link>
             </li>
           ))}
