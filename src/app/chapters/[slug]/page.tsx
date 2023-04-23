@@ -1,7 +1,19 @@
+"use client";
+
+import ContentSkeleton from "@/components/contentSkeleton";
+import dynamic from "next/dynamic";
+import { useParams } from "next/navigation";
+
 export default function BlogPostPage() {
+  const params = useParams();
+
+  const Mdx = dynamic(() => import(`@/content/${params?.slug}.mdx`), {
+    loading: () => <ContentSkeleton />,
+  });
+
   return (
-    <div className="flex justify-center items-center h-[100vh] text-5xl text-cyan-950">
-      Blog Post Page
+    <div className="py-8 min-h-[250px]">
+      <Mdx />
     </div>
   );
 }

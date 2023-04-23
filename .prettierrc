@@ -1,0 +1,10 @@
+{
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "pluginSearchDirs": false,
+  "printWidth": 100,
+  "endOfLine": "lf",
+  "singleAttributePerLine": true,
+
+  "semi": true,
+  "singleQuote": true
+}
