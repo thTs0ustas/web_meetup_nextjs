@@ -1,18 +1,20 @@
-import ChapterCard from "@/components/chapterCard";
-import PresentationCard from "@/components/presentationCard";
-import Image from "next/image";
+import ChapterCard from '@/components/chapterCard';
+import PresentationCard from '@/components/presentationCard';
+import content from '@/content.json';
 
 export default function IndexPage() {
   return (
-    <div className="flex flex-col justify-center items-center text-lg text-white bg-slate-900">
+    <div className="flex flex-col items-center justify-center bg-slate-900 text-lg text-white">
       <PresentationCard />
-      <div className="flex flex-col gap-2 w-4/5">
+      <div className="flex w-4/5 max-w-5xl flex-col gap-2">
         <h3 className="text-lg font-medium">Table of contents</h3>
-        <ChapterCard title="Introduction" parts={["one", "two"]} />
-        <ChapterCard title="Introduction" parts={["one", "two"]} />
-        <ChapterCard title="Introduction" parts={["one", "two"]} />
-        <ChapterCard title="Introduction" parts={["one", "two"]} />
-        <ChapterCard title="Introduction" parts={["one", "two"]} />
+        {content.map((chapter) => (
+          <ChapterCard
+            key={chapter.chapter}
+            chapter={chapter.chapter}
+            parts={chapter.parts}
+          />
+        ))}
       </div>
     </div>
   );

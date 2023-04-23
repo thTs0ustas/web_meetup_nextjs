@@ -1,6 +1,6 @@
 'use client';
 import Button from '@/components/navigationButton';
-import content from '@/content/content.json';
+import content from '@/content.json';
 import { nextPrev } from '@/utils';
 import { useParams, useRouter } from 'next/navigation';
 
