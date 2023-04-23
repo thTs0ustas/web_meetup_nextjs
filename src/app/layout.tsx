@@ -1,3 +1,5 @@
+import Nav from "@/components/nav";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 export const metadata = {
@@ -6,10 +8,18 @@ export const metadata = {
     "Meet up presentation for Next.js 13 ( ͡° ͜ʖ ͡°) with App directory.",
 };
 
+const inter = Inter({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+});
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={inter.className}>
+        <Nav />
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
