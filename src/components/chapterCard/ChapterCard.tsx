@@ -1,8 +1,7 @@
+import Link from 'next/link';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { upperFirst } from 'lodash-es';
-import Link from 'next/link';
-
+import { toLower, upperFirst } from 'lodash-es';
 import { clearPath } from '@/utils';
 
 type Props = {
@@ -25,10 +24,11 @@ const ChapterCard = ({ chapter, parts }: Props) => {
           {parts.map((part, i) => (
             <li key={part}>
               <Link
-                href={`/chapters/${chapter.toLocaleLowerCase()}/${clearPath(part)}`}
-                className="text-slate-200 hover:text-slate-100"
+                href={`/${toLower(chapter)}/${clearPath(part)}`}
+                className="flex text-slate-200 hover:text-orange-200 "
               >
-                {i + 1}. {upperFirst(clearPath(part))}
+                <span className="w-5">{`${i + 1}.`}</span>
+                {upperFirst(clearPath(part))}
               </Link>
             </li>
           ))}
