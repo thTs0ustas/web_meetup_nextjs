@@ -11,6 +11,7 @@ export default function BlogPostPage() {
 
   const Mdx = dynamic(() => import(`@/content/${createPath(content, params?.slug as string)}`), {
     loading: () => <ContentSkeleton />,
+    ssr: false,
   });
 
   return (

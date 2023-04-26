@@ -1,5 +1,9 @@
-export const nextPrev = <T extends any[]>(content: T, slug: string) => {
-  const t = content.map((c) => c.parts.map((p) => `${c.chapter}/${p.split('.')[1]}`)).flat();
+import { clearPath } from './clearPath';
+
+export const nextPrev = (content: { chapter: string; parts: string[] }[], slug: string) => {
+  const t = content
+    .map((c) => c.parts.map((p: string) => `${clearPath(c.chapter)}/${clearPath(p)}`))
+    .flat();
   const i = t.indexOf(slug);
 
   return {

@@ -3,11 +3,10 @@ import NavigationButtons from '@/components/navigationButtons';
 import Button from '@/components/navigationButtons/button';
 import content from '@/content.json';
 import { nextPrev } from '@/utils';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 export default function RootLayout({ children }) {
   const param = useParams();
-  const router = useRouter();
 
   const { next, prev } = nextPrev(content, param?.slug as string);
 

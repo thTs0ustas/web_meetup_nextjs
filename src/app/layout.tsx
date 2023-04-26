@@ -3,8 +3,14 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 
 export const metadata = {
-  title: 'Next.js',
+  title: 'Web Meetup - Next.js',
   description: 'Meet up presentation for Next.js 13 ( ͡° ͜ʖ ͡°) with App directory.',
+  icons: [
+    {
+      rel: 'icon',
+      url: 'assets/next.png',
+    },
+  ],
 };
 
 const inter = Inter({

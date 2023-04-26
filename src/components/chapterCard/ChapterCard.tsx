@@ -10,6 +10,7 @@ type Props = {
 };
 
 const ChapterCard = ({ chapter, parts }: Props) => {
+  console.log(chapter, parts);
   return (
     <div className="flex w-full items-center justify-center text-lg text-gray-200 ">
       <div className="bg-slate-950 p-9">
