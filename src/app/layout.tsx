@@ -8,7 +8,7 @@ export const metadata = {
   icons: [
     {
       rel: 'icon',
-      url: 'assets/next.png',
+      url: '/assets/next.png',
     },
   ],
 };

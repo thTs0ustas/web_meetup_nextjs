@@ -10,16 +10,15 @@ type Props = {
 };
 
 const ChapterCard = ({ chapter, parts }: Props) => {
-  console.log(chapter, parts);
   return (
-    <div className="flex w-full items-center justify-center text-lg text-gray-200 ">
-      <div className="bg-slate-950 p-9">
+    <div className="flex w-full items-center justify-center text-base text-gray-200 sm:text-lg ">
+      <div className="bg-slate-950 p-5 sm:p-9">
         <FontAwesomeIcon
           className="h-16 w-16 "
           icon={faCircleInfo}
         />
       </div>
-      <div className="w-full bg-slate-700 p-6">
+      <div className="w-full bg-slate-700 p-3 sm:p-6">
         <h1 className="text-2xl font-bold">{upperFirst(chapter)}</h1>
         <ul className="w-full">
           {parts.map((part, i) => (

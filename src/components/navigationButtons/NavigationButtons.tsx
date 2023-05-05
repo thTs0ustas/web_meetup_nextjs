@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 const NavigationButtons = ({ prev, next }) => {
   const router = useRouter();
   return (
-    <div className="flex w-full justify-between">
+    <div className="flex w-full justify-between ">
       <Button
         disabled={!prev}
         onClick={() => router.push(`/${prev}`)}

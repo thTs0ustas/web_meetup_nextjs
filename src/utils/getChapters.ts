@@ -14,7 +14,6 @@ export function getChapters() {
       parts,
     };
   });
-  console.log(content);
 
   writeFileSync(contentFile, JSON.stringify(content));
 }
